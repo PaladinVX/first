@@ -1,0 +1,79 @@
+// ConsoleApplication18.cpp : 定义控制台应用程序的入口点。
+//
+
+#include "stdafx.h"
+#include<iostream>
+#include<string>
+using namespace std;
+
+enum city{A,B,C,D,E,F,G};
+
+enum seatlocation{high=1,medium,low};
+
+enum speed{K=1,T,G};
+
+enum seattype{sleep=1,sit};
+
+//主要是定义了列车信息的几个类型
+struct time
+{
+	int month;
+	int day;
+	int hour;
+	int minute;
+};
+
+struct seat
+{
+	int number;
+	bool istaken;
+};
+
+struct bed
+{
+	int number;
+	seatlocation type;
+	bool istaken;
+};
+
+//以上是车辆信息所需结构体
+
+//以下代码是留着编号用的
+//seat allseat[120];
+//for(int i=0;i<120;i++)
+//	{
+//		allseat[i].number=(i+1);
+//	}
+
+//bed allbed[60];
+//for(int i=0;i<60;i++)
+//{
+//	allbed[i].number=(i+1);
+//	switch(i%3)
+//	{
+//		case 0:allbed[i].seatlocation=high;break;
+//		case 1:allbed[i].seatlocation=high;break;
+//		default:allbed[i].seatlocation=high;break;
+//	}
+//}
+
+
+class Train
+{
+private:
+	string trainnumber;
+	time departure;
+	time arrival;
+	int triptime;
+	int price;
+	city starting;
+	city destination;
+	
+public:
+	speed trainspeed;
+	seattype trainseattype;
+	
+	//在构造函数中应该有一种机制使得座位种类随着坐铺\卧铺而改变，或许用类的派生可以更方便做到
+};
+
+
